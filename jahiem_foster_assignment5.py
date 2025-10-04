@@ -19,10 +19,10 @@ print(f"Steps: {step_count}")
 print("=== Challenge 2: Prime Number Checker ===")
 num = int(input("Enter a number: "))
 
-if num > 1: # No negative values are needed for this test case
+if num > 1: # No negatives
     print(f"Testing divisors from 2 to {num - 1}...")
     for i in range(2, num):
-        if num % i == 0: # If the remainder is equal to 0, it's not prime.
+        if num % i == 0: # If the remainder = 0 it's not prime.
             print(f"{num} is not prime (divisible by {i})")
             break
     else:
@@ -31,3 +31,21 @@ else:
     print(f"{num} is not prime")
 
 print()
+
+# TEST CASE 3: Multiplication Table
+print("=== Challenge 3: Multiplication Table ===")
+print("Multiplication Table:")
+print("", end="")
+
+# header numbers
+for header in range(1, 11):
+    print(f"{header:4}", end="")
+print()
+
+# Loops that create the rows, columns, and products
+for row in range(1, 11): # 1 is in the range, 11 is not. it goes from 1 to 10
+    print(f"{row:2}", end="")
+    for col in range(1, 11):
+        table_value = row * col # Products come from multiplying a rows with corresponding columns
+        print(f"{table_value:4}", end="")
+    print()
